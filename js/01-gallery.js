@@ -18,9 +18,7 @@ const createMarcup = galleryItems.map(({ preview, original, description }) => {
 gallery.insertAdjacentHTML("beforeend", createMarcup);
 
 
-
 gallery.addEventListener("click", onShowImg);
-
 
 function onShowImg(event) {
   const { target } = event;
