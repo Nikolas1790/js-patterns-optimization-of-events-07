@@ -35,7 +35,7 @@ function onShowImg(event) {
 
   const origiImg = target.closest('.js-gallery__image').dataset.source;
   const currentItem = galleryItems.find((source) =>  source === origiImg);
-  console.log(origiImg)
+  // console.log(origiImg)
 
 
   const instance = basicLightbox.create(`<div class="modal">
@@ -46,7 +46,7 @@ function onShowImg(event) {
   
 `).show();
   // instance.show();
-console.log(instance)
+// console.log(instance)
 
 }
 
