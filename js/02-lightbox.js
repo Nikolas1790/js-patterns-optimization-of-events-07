@@ -14,32 +14,6 @@ const createMarcup = galleryItems.map(({ preview, original, description }) => {
 gallery.insertAdjacentHTML("beforeend", createMarcup);
 console.log(createMarcup);
 
-var lightbox = new SimpleLightbox('.gallery a', {captionsData: `alt`, captionDelay: 250,});
+var lightbox = new SimpleLightbox('.gallery a', {captionsData: `alt`, captionDelay: 250 });
 
 
-
-
-
-
-
-
-
-
-
-
-// gallery.addEventListener('click', onGaleryPhoto);
-
-// console.log(gallery);
-// function onGaleryPhoto(event) {
-//     const { target } = event;
-
-    // if (!target.classList.contains('gallery__image')) {
-    // return;
-    // }
-    // console.log(target)
-    // const origiImg = target.closest('.gallery__link')..href;
-
-// var lightbox = new SimpleLightbox('.gallery a', { origiImg });
-
-// }
-// var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
