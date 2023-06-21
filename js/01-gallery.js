@@ -33,19 +33,42 @@ function onShowImg(event) {
   }
  
   const origiImg = target.closest('.js-gallery__image').dataset.source;
-  // const currentItem = galleryItems.find((source) =>  source === origiImg);
-  
+    
 
 const instance = basicLightbox.create(`
     <img src="${origiImg}" width="800" height="600">
-`);
+`, 'instance');
   instance.show();
-  
- window.addEventListener('keydown', event => {
+
+ function  onEscClosedMainPhoto(event) {
     if (event.code === 'Escape') {
       instance.close();
+      window.removeEventListener('keydown', onEscClosedMainPhoto);
+      console.log(event)
     }
-  });
+    };  
+  window.addEventListener('keydown', onEscClosedMainPhoto);
+ 
+
+//  window.addEventListener('keydown',  event => {
+//     if (event.code === 'Escape') {
+//       instance.close();
+//       console.log(event)
+//     }
+   
+//  });
+
+  
+  //  function  onEscClosedMainPhoto(event) {
+  //   if (event.code === 'Escape') {
+  //     instance.close();
+  //   }
+  //   };
+    
+  // onShow: (instance) => {}	  
+	// onClose: (instance) => {}   
 }
 
 
+
+  
