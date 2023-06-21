@@ -1,3 +1,5 @@
+
+
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
@@ -22,6 +24,8 @@ gallery.addEventListener("click", onShowImg);
 
 function onShowImg(event) {
   event.preventDefault();
+
+  
   const { target } = event;
   
   if (!target.classList.contains('js-gallery__image')) {
@@ -34,9 +38,14 @@ function onShowImg(event) {
 
 const instance = basicLightbox.create(`
     <img src="${origiImg}" width="800" height="600">
-`).show();
+`);
+  instance.show();
   
+ window.addEventListener('keydown', event => {
+    if (event.code === 'Escape') {
+      instance.close();
+    }
+  });
 }
-
 
 
