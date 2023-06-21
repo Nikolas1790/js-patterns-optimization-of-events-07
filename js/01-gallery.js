@@ -34,7 +34,6 @@ function onShowImg(event) {
 const instance = basicLightbox.create(`
     <img src="${origiImg}" width="800" height="600">
 `).show();
-
   
 }
 
