@@ -21,6 +21,7 @@ gallery.insertAdjacentHTML("beforeend", createMarcup);
 gallery.addEventListener("click", onShowImg);
 
 function onShowImg(event) {
+  event.preventDefault();
   const { target } = event;
   
   if (!target.classList.contains('js-gallery__image')) {
