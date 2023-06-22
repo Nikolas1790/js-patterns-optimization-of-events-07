@@ -35,38 +35,51 @@ function onShowImg(event) {
   const origiImg = target.closest('.js-gallery__image').dataset.source;
     
 
+
+
+
 const instance = basicLightbox.create(`
     <img src="${origiImg}" width="800" height="600">
-`, 'instance');
+`,
+  {
+    onShow: (instance) => {
+      window.addEventListener('keydown', onEscClosedMainPhoto);
+    },
+    onClose: (instance) => {
+      window.removeEventListener('keydown', onEscClosedMainPhoto);
+    },
+  });
   instance.show();
 
  function  onEscClosedMainPhoto(event) {
     if (event.code === 'Escape') {
       instance.close();
-      window.removeEventListener('keydown', onEscClosedMainPhoto);
+      
       console.log(event)
     }
     };  
-  window.addEventListener('keydown', onEscClosedMainPhoto);
- 
-
-//  window.addEventListener('keydown',  event => {
-//     if (event.code === 'Escape') {
-//       instance.close();
-//       console.log(event)
-//     }
-   
-//  });
+  
 
   
-  //  function  onEscClosedMainPhoto(event) {
-  //   if (event.code === 'Escape') {
-  //     instance.close();
-  //   }
-  //   };
-    
-  // onShow: (instance) => {}	  
-	// onClose: (instance) => {}   
+  
+
+// const instance = basicLightbox.create(`
+//     <img src="${origiImg}" width="800" height="600">
+// `);
+//   instance.show();
+
+//  function  onEscClosedMainPhoto(event) {
+//     if (event.code === 'Escape') {
+//       instance.close();
+//       window.removeEventListener('keydown', onEscClosedMainPhoto);
+//       console.log(event)
+//     }
+//     };  
+//   window.addEventListener('keydown', onEscClosedMainPhoto);
+ 
+  
+  
+  
 }
 
 
