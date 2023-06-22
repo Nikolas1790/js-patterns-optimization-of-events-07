@@ -29,7 +29,7 @@ function onShowImg(event) {
 
   if (!target.classList.contains('js-gallery__image')) return;
    
-  const origImg = target.closest('.js-gallery__image').dataset.source;  
+  const origImg = target.dataset.source;  
 
 
 const instance = basicLightbox.create(`
