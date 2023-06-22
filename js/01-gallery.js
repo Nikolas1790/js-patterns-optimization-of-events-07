@@ -23,23 +23,17 @@ gallery.insertAdjacentHTML("beforeend", createMarcup);
 gallery.addEventListener("click", onShowImg);
 
 function onShowImg(event) {
-  event.preventDefault();
-
-  
+  event.preventDefault(); 
   const { target } = event;
   
-  if (!target.classList.contains('js-gallery__image')) {
-    return;
-  }
- 
-  const origiImg = target.closest('.js-gallery__image').dataset.source;
-    
 
-
+  if (!target.classList.contains('js-gallery__image')) return;
+   
+  const origImg = target.closest('.js-gallery__image').dataset.source;  
 
 
 const instance = basicLightbox.create(`
-    <img src="${origiImg}" width="800" height="600">
+    <img src="${origImg}" width="800" height="600">
 `,
   {
     onShow: (instance) => {
