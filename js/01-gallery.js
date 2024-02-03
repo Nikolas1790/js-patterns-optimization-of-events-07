@@ -1,7 +1,4 @@
-
-
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
 
 const gallery = document.querySelector('.gallery');
 
@@ -19,22 +16,19 @@ const createMarcup = galleryItems.map(({ preview, original, description }) => {
 }).join("");
 gallery.insertAdjacentHTML("beforeend", createMarcup);
 
-
 gallery.addEventListener("click", onShowImg);
 
 function onShowImg(event) {
   event.preventDefault(); 
-  const { target } = event;
-  
+  const { target } = event;  
 
   if (!target.classList.contains('js-gallery__image')) return;
    
   const origImg = target.dataset.source;  
 
-
-const instance = basicLightbox.create(`
+  const instance = basicLightbox.create(`
     <img src="${origImg}" width="800" height="600">
-`,
+  `,
   {
     onShow: (instance) => {
       window.addEventListener('keydown', onEscClosedMainPhoto);
@@ -45,35 +39,13 @@ const instance = basicLightbox.create(`
   });
   instance.show();
 
- function  onEscClosedMainPhoto(event) {
+  function  onEscClosedMainPhoto(event) {
     if (event.code === 'Escape') {
       instance.close();
       
       console.log(event)
     }
-    };  
-  
-
-  
-  
-
-// const instance = basicLightbox.create(`
-//     <img src="${origiImg}" width="800" height="600">
-// `);
-//   instance.show();
-
-//  function  onEscClosedMainPhoto(event) {
-//     if (event.code === 'Escape') {
-//       instance.close();
-//       window.removeEventListener('keydown', onEscClosedMainPhoto);
-//       console.log(event)
-//     }
-//     };  
-//   window.addEventListener('keydown', onEscClosedMainPhoto);
- 
-  
-  
-  
+   };      
 }
 
 
